@@ -7,54 +7,56 @@ object Main extends App {
 
 
 
+
 def programLoop(): Unit = {
 
-  print("What would you like to do?\n")
-  print("1. Age thingie\n")
-  print("2. stop program\n")
+  print("What would you like to ask me?\n")
+  print("1. Where are you born?\n")
+  print("2. How old are you?\n")
+  print("3. stop program\n")
   val menu = readInt()
 
-  if(menu == 1){
 
-
-
-
-  print("How old are you? ")
-  val age = readInt()
-
-
-  val birthday = age match {
-    case 0 => "first"
-    case 1 => "second"
-    case 2 => "third"
-    case _ => age + "th"
+  val choice = menu match {
+    case 1 => born()
+    case 2 => ageComparer()
+    case _ => stopProgram()
   }
 
-  println(s"it is your $birthday birthday..")
-
-  //conditionals
-  if(age >= 18) println("you can learn to drive")
-
-  //  val exampleList = List(1,4,5,7,8,10,1,0)
-  //
-  //  val something: List[Int] = exampleList.filter(x => x > 4 && x < 8)
-  //
-  ////
-  //  print
-    programLoop()
-  } else {
-    println("bye bye\n")
-  }
 }
+
+
+
+
+  def born() = {
+    print("\nI was born in Wijchen \n")
+    print("\n Tell my where you were born and I'll let you know the distance from my birthplace \n")
+    val userPlaceOfBirth = readLine()
+    distanceFromMe(userPlaceOfBirth)
+
+    programLoop()
+  }
+
+  def distanceFromMe(userPlaceOfBirth : String) ={
+    println(s" $userPlaceOfBirth, nice I haven't implemented data fetching from \n an external API yet, come back later.")
+  }
+
+  def ageComparer() = {
+    print("Why don't you tell me your age and I'll tell you the difference?")
+    val userAge = readInt()
+    if(userAge > 31) println("You are older")
+    if(userAge < 31) println("You are younger")
+    programLoop()
+  }
+
+  def stopProgram(): Unit = {
+    print("\n Thanks for stopping by, see you again! \n")
+  }
+
+
 
   programLoop()
-
-
-
-
-
-
-
-
 }
+
+
 
