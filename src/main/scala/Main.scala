@@ -1,22 +1,8 @@
 import scala.io.StdIn.{readInt, readLine}
 
 object Main extends App {
-
-
-
-
-
-
-
-def programLoop(): Unit = {
-
-  val welcome = List(
-    "What would you like to ask me?",
-    "1. Where are you born?",
-    "2. How old are you?",
-    "3. stop program"
-  )
-
+  def programLoop(): Unit = {
+  val welcome = List("What would you like to ask me?", "1. Where are you born?", "2. How old are you?", "3. stop program")
   welcome.map( e => println(e) )
 
   val menu = readInt()
@@ -28,9 +14,6 @@ def programLoop(): Unit = {
   }
 
 }
-
-
-
 
   def born() = {
     print("\nI was born in Wijchen \n")
@@ -46,20 +29,18 @@ def programLoop(): Unit = {
   }
 
   def ageComparer() = {
-    print("Why don't you tell me your age and I'll tell if you are younger or older?")
+    print("Why don't you tell me your age and I'll tell if you are younger or older? \n")
     val userAge = readInt()
-    if(userAge > 31) println("You are older")
-    if(userAge < 31) println("You are younger")
+    if(userAge > 31) println("\n You are older")
+    if(userAge < 31) println("\n You are younger")
     programLoop()
   }
+
+  programLoop()
 
   def stopProgram(): Unit = {
     print("\n Thanks for stopping by, see you again! \n")
   }
-
-
-
-  programLoop()
 }
 
 
