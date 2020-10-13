@@ -1,1 +1,1 @@
-["sbt.Task[scala.collection.Seq[scala.Tuple2[java.nio.file.Path, sbt.nio.FileStamp]]]",{"hashes":[["/Users/bartkuijper/Code/CodingChallenges/scala/hello-worldhehehhg/build.sbt","b1599f0f6b0946dac1f3f5587b78d4e911689226"]],"lastModifiedTimes":[]}]
+["sbt.Task[scala.collection.Seq[scala.Tuple2[java.nio.file.Path, sbt.nio.FileStamp]]]",{"hashes":[["/Users/bartkuijper/Code/CodingChallenges/scala/scala-exploration/build.sbt","b1599f0f6b0946dac1f3f5587b78d4e911689226"]],"lastModifiedTimes":[]}]
