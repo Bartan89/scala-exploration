@@ -10,12 +10,16 @@ object Main extends App {
 
 def programLoop(): Unit = {
 
-  print("What would you like to ask me?\n")
-  print("1. Where are you born?\n")
-  print("2. How old are you?\n")
-  print("3. stop program\n")
-  val menu = readInt()
+  val welcome = List(
+    "What would you like to ask me?",
+    "1. Where are you born?",
+    "2. How old are you?",
+    "3. stop program"
+  )
 
+  welcome.map( e => println(e) )
+
+  val menu = readInt()
 
   val choice = menu match {
     case 1 => born()
@@ -42,7 +46,7 @@ def programLoop(): Unit = {
   }
 
   def ageComparer() = {
-    print("Why don't you tell me your age and I'll tell you the difference?")
+    print("Why don't you tell me your age and I'll tell if you are younger or older?")
     val userAge = readInt()
     if(userAge > 31) println("You are older")
     if(userAge < 31) println("You are younger")
