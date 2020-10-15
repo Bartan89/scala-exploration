@@ -5,15 +5,11 @@ import scala.io.StdIn.{readInt, readLine}
 
 object Main extends App {
 
+  case class data(city: String, distance: Int)
 
-//  val data = Map(1 -> ("Amsterdam", 24), 2 -> ("y", 25), 3 -> ("z", 26))
-//
-//data.keys.foreach { (key) => {
-//  println(key + " " + data(key)._1)
-//
-//}
-//
-//}
+  val citiesAndDistances: List[data] = List(data("Amsterdam", 40), data("Maastricht", 40))
+
+
 
 
   def programLoop(): Unit = {
@@ -40,7 +36,14 @@ object Main extends App {
   }
 
   def distanceFromMe(userPlaceOfBirth : String) ={
-    println(s"$userPlaceOfBirth, nice I haven't implemented data fetching from \n an external API yet, come back later.")
+
+    citiesAndDistances.zipWithIndex.map{ case (element, index) =>
+      println(index + " " + element.city)
+    }
+
+
+
+
   }
 
   def ageComparer() = {
