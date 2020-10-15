@@ -5,16 +5,18 @@ import scala.io.StdIn.{readInt, readLine}
 
 object Main extends App {
 
-  case class data(city: String, distance: Int)
+  case class data(id: Int, city: String, distance: Int)
 
-  val citiesAndDistances: List[data] = List(data("Amsterdam", 40), data("Maastricht", 40))
+  val citiesAndDistances: List[data] = List(data(1, "Amsterdam", 67), data(2, "Maastricht", 120), data(3, "Wijchen", 0), data(4, "Tilburg", 55), data(5, "Urk", 65))
 
 
 
 
   def programLoop(): Unit = {
-  val welcome = List("What would you like to ask me?", "1. Where are you born?", "2. How old are you?", "3. stop program")
-  welcome.map( e => println(e) )
+  val welcome = List("\nWhat would you like to ask me?\n", "Where are you born?", "How old are you?", "Stop program")
+  welcome.zipWithIndex.map { case (e, i) => println(s"${if(i>0) i else {
+    e.flatMap(x => if(x >= e.length) "_" else "")
+  }}  $e") }
 
   val menu = readInt()
 
@@ -27,18 +29,43 @@ object Main extends App {
 }
 
   def born() = {
-    print("\nI was born in Wijchen \n")
-    print("\n Tell my where you were born and I'll let you know the distance from my birthplace \n")
-    val userPlaceOfBirth = readLine()
-    distanceFromMe(userPlaceOfBirth)
+    print("Let's make it into a game, you guess from these options\n")
+    citiesAndDistances.map((e) => println(s"${e.id} ${e.city}"))
+
+
+    userGuesesBirthPlace()
 
     programLoop()
   }
 
-  def distanceFromMe(userPlaceOfBirth : String) ={
+  def userGuesesBirthPlace() ={
+    val guess = readInt()
 
-    citiesAndDistances.zipWithIndex.map{ case (element, index) =>
-      println(index + " " + element.city)
+    repeatedAskTillRightAswer(guess)
+    def repeatedAskTillRightAswer(guess : Int, previousGuess : Int = -1){
+
+
+      val prev = citiesAndDistances.find(e => e.id == previousGuess)
+      val cur = citiesAndDistances.find(e => e.id == guess)
+
+      if(previousGuess == -1 && cur.get.distance != 0){
+        println("That is not correct")
+      }
+      else if(cur.get.distance == 0){
+        println("Thas is correct, well done")
+        println("press any key to continue")
+        val answer = readLine()
+        if(answer != null) programLoop()
+      } else if (cur.get.distance < prev.get.distance) {
+        println("Warmer")
+      }  else {
+        println("Colder")
+      }
+
+
+      val nextGuess = readInt()
+
+      repeatedAskTillRightAswer(nextGuess, cur.get.id)
     }
 
 
