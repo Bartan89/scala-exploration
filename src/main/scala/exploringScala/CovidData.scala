@@ -1,15 +1,13 @@
 import java.net.SocketTimeoutException
-
-import IntroducingMyself.Main.{anyKey, programLoop}
+import exploringScala.Main.{anyKey, programLoop}
 import io.circe.generic.semiauto.deriveDecoder
 import scalaj.http._
 import io.circe.parser
-
 import scala.io.StdIn.readLine
 
 package object CovidRelated {
   def covidData(): Unit = {
-    println("Type in a country to get accumulation of covid cases")
+    println("Type in a country to get data on Covid cases.")
     val userTyped = readLine()
     val country = preCheck(userTyped)
 

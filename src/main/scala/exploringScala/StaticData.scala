@@ -1,6 +1,5 @@
 package object StaticData {
 
-
   case class data(id: Int, city: String, distance: Int)
 
   val welcomeAndMenuOptions =
@@ -10,7 +9,6 @@ package object StaticData {
       "Want to hear a joke? (api) 😁",
       "Explore covid Data (api) 🔢",
       "Stop program 💀")
-
 
   val citiesAndDistances: List[data] =
     List(data(1, "Wijchen", 0),

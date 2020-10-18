@@ -1,4 +1,4 @@
-package IntroducingMyself
+package exploringScala
 
 object playground extends App {
 

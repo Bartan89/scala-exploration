@@ -1,5 +1,5 @@
-package IntroducingMyself
-import IntroducingMyself.Main.{anyKey, programLoop}
+package exploringScala
+import exploringScala.Main.{anyKey, programLoop}
 import dealingWithInput.{forceUseOfNumber}
 
 import scala.io.StdIn.readLine

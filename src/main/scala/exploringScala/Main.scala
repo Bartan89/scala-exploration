@@ -1,6 +1,6 @@
-package IntroducingMyself
+package exploringScala
 import CovidRelated.covidData
-import IntroducingMyself.AgeComparer.howOldAreYou
+import exploringScala.AgeComparer.howOldAreYou
 import StaticData.{citiesAndDistances, welcomeAndMenuOptions}
 import dealingWithInput.{forceUseOfNumber}
 
@@ -8,8 +8,6 @@ import scala.io.StdIn.{readInt, readLine}
 
 object Main extends App {
   def programLoop(): Unit = {
-
-
     welcomeAndMenuOptions
       .zipWithIndex
       .map {
@@ -20,7 +18,6 @@ object Main extends App {
           println(s"$stylingAndNumber $menuElement")
         }
     }
-
     val capturedInput = readLine()
     val onUserInput = forceUseOfNumber(capturedInput)
 
