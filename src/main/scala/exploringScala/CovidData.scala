@@ -1,8 +1,11 @@
 import java.net.SocketTimeoutException
-import exploringScala.Main.{anyKey, programLoop}
+
+import exploringScala.Main.{programLoop}
+import exploringScala.helperTools.anyKey
 import io.circe.generic.semiauto.deriveDecoder
 import scalaj.http._
 import io.circe.parser
+
 import scala.io.StdIn.readLine
 
 package object CovidRelated {

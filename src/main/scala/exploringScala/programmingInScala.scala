@@ -1,4 +1,5 @@
-import exploringScala.Main.{anyKey, programLoop}
+import exploringScala.Main.{ programLoop}
+import exploringScala.helperTools.anyKey
 import scalaj.http._
 import io.circe.parser
 import io.circe.generic.semiauto.deriveDecoder

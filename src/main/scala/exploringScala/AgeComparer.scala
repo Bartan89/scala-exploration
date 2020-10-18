@@ -1,6 +1,7 @@
 package exploringScala
-import exploringScala.Main.{anyKey, programLoop}
-import dealingWithInput.{forceUseOfNumber}
+import exploringScala.Main.{ programLoop}
+import dealingWithInput.forceUseOfNumber
+import exploringScala.helperTools.anyKey
 
 import scala.io.StdIn.readLine
 
